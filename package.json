@@ -1,0 +1,35 @@
+{
+  "name": "ts-result",
+  "description": "Minimalistic Result type for TypeScript.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "serkonda7",
+  "homepage": "https://github.com/serkonda7/ts-result",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/serkonda7/ts-result"
+  },
+  "bugs": {
+    "url": "https://github.com/serkonda7/ts-result/issues"
+  },
+  "keywords": [],
+  "type": "module",
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "scripts": {
+    "lint:fix": "biome check --write",
+    "lint:ci": "biome ci",
+    "check": "bunx tsgo",
+    "build": "bun run check && bun run scripts/build.ts",
+    "prepack": "bun run build"
+  },
+  "packageManager": "bun@1.3.5",
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "~2.3.11",
+    "@types/bun": "~1.3.5",
+    "@typescript/native-preview": "~7.0.0-dev.20260109.1"
+  }
+}

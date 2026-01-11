@@ -1,1 +1,1 @@
-# js-result
+# ts-result
