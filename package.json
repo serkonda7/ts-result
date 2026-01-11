@@ -1,5 +1,5 @@
 {
-  "name": "ts-result",
+  "name": "@serkonda7/ts-result",
   "description": "Minimalistic Result type for TypeScript.",
   "version": "1.0.0",
   "license": "MIT",
@@ -15,8 +15,7 @@
   "keywords": [],
   "type": "module",
   "files": [
-    "dist/",
-    "README.md"
+    "dist/"
   ],
   "scripts": {
     "lint:fix": "biome check --write",
