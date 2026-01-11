@@ -1,6 +1,6 @@
 {
   "name": "ts-result",
-  "description": "Minimalistic Result<V, E> type for TypeScript.",
+  "description": "Minimalistic Result type for TypeScript.",
   "version": "1.0.0",
   "license": "MIT",
   "author": "serkonda7",
