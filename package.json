@@ -20,7 +20,8 @@
   "scripts": {
     "lint": "biome check --write",
     "lint:ci": "biome ci",
-    "build": "bunx tsgo && bun run scripts/build.ts",
+    "check": "tsgo --noEmit",
+    "build": "tsgo && bun run scripts/build.ts",
     "prepack": "bun run build"
   },
   "engines": {
