@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { type BuildConfig, build } from 'bun'
 
 const cfg: BuildConfig = {
@@ -6,4 +7,8 @@ const cfg: BuildConfig = {
 	target: 'node',
 }
 
-await build(cfg)
+const res = await build(cfg)
+if (!res.success) {
+	console.error(res.logs)
+	process.exit(1)
+}

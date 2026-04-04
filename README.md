@@ -12,6 +12,44 @@ npm install @serkonda7/ts-result
 ```
 
 
+## 🚀 Usage
+```ts
+import { ok, err, unwrap, type Result } from '@serkonda7/ts-result'
+
+// To use, wrap a functions return type into `Result<>`
+function parsePort (input: string): Result<number> {
+    const port = Number.parseInt(input, 10)
+
+    if (!Number.isInteger(port)) {
+        // Return an error result by using the `err()` helper
+        return err('PORT must be an integer')
+    }
+
+    if (port < 1 || port > 65535) {
+        // It supports strings, Error classes or any custom object
+        return err(new Error('PORT must be between 1 and 65535'))
+    }
+
+    // Return an successful result using the `ok()` helper
+    return ok(port)
+}
+
+const portResult = parsePort(process.env.PORT)
+
+// Check the result for an error:
+if (portResult.error) {
+    console.error(portResult.error)
+    process.exit(1)
+}
+
+// Use the value afterwards
+let port = portResult.value
+
+// Use the `unwrap()` helper to throw any error or return the value
+const port = unwrap(portResult)
+```
+
+
 ## 📜 License
 This repo is licensed under the [MIT License](LICENSE.txt).
 
