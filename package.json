@@ -21,6 +21,7 @@
     "lint": "biome check --write",
     "lint:ci": "biome ci",
     "check": "tsgo --noEmit",
+    "test": "bun test",
     "build": "tsgo && bun run scripts/build.ts",
     "prepack": "bun run build"
   },

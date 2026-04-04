@@ -38,7 +38,7 @@ export const err = <E>(error: E): Err<E> => ({ error })
  *
  * In case of an error, it is thrown.
  */
-export function unwrap<V, E extends Error>(result: Result<V, E>): V {
+export function unwrap<V, E>(result: Result<V, E>): V {
 	if ('error' in result) {
 		throw result.error
 	}
