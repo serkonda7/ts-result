@@ -1,7 +1,7 @@
 {
   "name": "@serkonda7/ts-result",
   "description": "Minimalistic Result type for TypeScript.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "serkonda7",
   "homepage": "https://github.com/serkonda7/ts-result",
