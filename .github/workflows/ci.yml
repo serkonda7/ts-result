@@ -43,7 +43,7 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Build package
-        run: bun pm pack --filename ts-result.tgz
+        run: bun run pack
       - name: Publish to npmjs.org
         run: NODE_AUTH_TOKEN="" npm publish ./ts-result.tgz --access public
       - name: Create GitHub Release

@@ -5,13 +5,12 @@
     "module": "preserve",
     "moduleResolution": "bundler",
     "declaration": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": true, // TS to JS is handled by bun
     "outDir": "dist",
-    "strict": true,
     "skipLibCheck": true,
+    "strict": true
   },
   "include": [
-    "src",
-    "scripts",
+    "src/result.ts",
   ],
 }
