@@ -1,4 +1,10 @@
+# Build output
 dist/
 *.tgz
+
+# Dependencies
 node_modules/
+
+# Editor files
 .vscode/
+*.code-workspace

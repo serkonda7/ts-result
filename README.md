@@ -50,6 +50,33 @@ const port = unwrap(portResult)
 ```
 
 
+## 🧹 Linter Configuration
+To avoid exception-based control flow, configure your linter to disallow `throw` statements in application code.
+
+### Biome example configuration
+```gritql
+// no-throw.grit
+
+language js (typescript, jsx);
+
+`throw $expr` as $throw where {
+  register_diagnostic(
+    span = $throw,
+    message = "Use Result 'return err(...)' instead of `throw`"
+  )
+}
+```
+
+```jsonc
+// biome.jsonc
+
+{
+  // ...
+  "plugins": ["./no-throw.grit"]
+}
+```
+
+
 ## 📜 License
 This repo is licensed under the [MIT License](LICENSE.txt).
 

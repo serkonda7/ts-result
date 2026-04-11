@@ -1,4 +1,11 @@
 # Changelog
+## 1.0.4
+_2026-04-11_
+
+- docs: recommend linter configuration
+- docs: add Biome configuration example
+
+
 ## 1.0.3
 _2026-04-04_
 
