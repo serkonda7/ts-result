@@ -4,13 +4,10 @@
     "target": "esnext",
     "module": "preserve",
     "moduleResolution": "bundler",
-    "declaration": true,
-    "emitDeclarationOnly": true, // TS to JS is handled by bun
-    "outDir": "dist",
+    "noEmit": true,
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "types": ["bun"]
   },
-  "include": [
-    "src/result.ts",
-  ],
+  "include": ["src", "scripts"]
 }

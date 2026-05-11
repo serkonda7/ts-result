@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true, // TS to JS is handled by bun
+    "outDir": "dist",
+  },
+  "exclude": ["scripts", "**/*.test.ts"]
+}

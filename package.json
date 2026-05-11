@@ -20,20 +20,20 @@
   "scripts": {
     "lint": "biome check --write",
     "lint:ci": "biome ci",
-    "check": "tsgo -p tsconfig.check.json",
+    "check": "tsgo",
     "test": "bun test",
-    "build": "tsgo && bun run scripts/build.ts",
+    "build": "tsgo -p tsconfig.build.json && bun run scripts/build.ts",
     "prepack": "bun run build",
     "pack": "bun pm pack --filename ts-result.tgz"
   },
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "bun@1.3.11",
+  "packageManager": "bun@1.3.13",
   "dependencies": {},
   "devDependencies": {
-    "@biomejs/biome": "2.4.11",
-    "@types/bun": "~1.3.11",
-    "@typescript/native-preview": "~7.0.0-dev.20260411.1"
+    "@biomejs/biome": "2.4.15",
+    "@types/bun": "~1.3.13",
+    "@typescript/native-preview": "~7.0.0-dev.20260511.1"
   }
 }
