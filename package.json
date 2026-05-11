@@ -20,9 +20,9 @@
   "scripts": {
     "lint": "biome check --write",
     "lint:ci": "biome ci",
-    "check": "tsgo -p tsconfig.check.json",
+    "check": "tsgo",
     "test": "bun test",
-    "build": "tsgo && bun run scripts/build.ts",
+    "build": "tsgo -p tsconfig.build.json && bun run scripts/build.ts",
     "prepack": "bun run build",
     "pack": "bun pm pack --filename ts-result.tgz"
   },
