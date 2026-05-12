@@ -13,7 +13,7 @@ type Ok<V> = {
 	error?: never
 }
 
-type Err<E = ErrorTypes> = {
+type Err<E> = {
 	error: E
 	value?: never
 }

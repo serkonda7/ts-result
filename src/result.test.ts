@@ -15,11 +15,12 @@ describe('ok', () => {
 	})
 })
 
-describe('err', () => {
+describe('err and error types', () => {
 	test('result with Error', () => {
 		const failure = new Error('boom')
 		const res = err(failure)
 
+		expect(res.error).toBeInstanceOf(Error)
 		expect(res).toEqual({ error: failure })
 		expect(res.value).toBeUndefined()
 	})
