@@ -26,7 +26,7 @@ function parsePort (input: string): Result<number> {
     }
 
     if (port < 1 || port > 65535) {
-        // It supports strings, Error classes or any custom object
+      // It supports strings and Error classes
         return err(new Error('PORT must be between 1 and 65535'))
     }
 

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test'
-import { err, ok, unwrap } from './result'
+import { err, ok, type Result, unwrap } from './result'
 
 describe('ok', () => {
 	test('create results', () => {
@@ -30,12 +30,6 @@ describe('err', () => {
 		expect(res).toEqual({ error: 'failure' })
 		expect(res.value).toBeUndefined()
 	})
-
-	test('custom error payload', () => {
-		const res = err({ code: 'E_INVALID', message: 'invalid input' })
-
-		expect(res.error).toEqual({ code: 'E_INVALID', message: 'invalid input' })
-	})
 })
 
 describe('unwrap', () => {
@@ -59,5 +53,29 @@ describe('unwrap', () => {
 
 	test('throws non-Error payloads as-is', () => {
 		expect(() => unwrap(err('failure'))).toThrow('failure')
+	})
+})
+
+describe('integration tests', () => {
+	function my_fun(force_fail: boolean): Result<number> {
+		if (force_fail) {
+			return err('forced failure')
+		}
+
+		return ok(123)
+	}
+
+	test('success case', () => {
+		const res = my_fun(false)
+
+		expect(res.value).toBe(123)
+		expect(res.error).toBeUndefined()
+	})
+
+	test('failure case', () => {
+		const res = my_fun(true)
+
+		expect(res.error).toBe('forced failure')
+		expect(res.value).toBeUndefined()
 	})
 })

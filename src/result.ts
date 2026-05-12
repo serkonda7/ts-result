@@ -13,15 +13,18 @@ type Ok<V> = {
 	error?: never
 }
 
-type Err<E> = {
+type Err<E = ErrorTypes> = {
 	error: E
 	value?: never
 }
 
+// Types supported as error payload
+type ErrorTypes = string | Error
+
 /**
  * Union type representing either success or failure.
  */
-export type Result<V, E = Error> = Ok<V> | Err<E>
+export type Result<V, E = ErrorTypes> = Ok<V> | Err<E>
 
 /**
  * Helper to create a successful Result.
@@ -31,7 +34,7 @@ export const ok = <V>(value: V): Ok<V> => ({ value })
 /**
  * Helper to create a failed Result.
  */
-export const err = <E>(error: E): Err<E> => ({ error })
+export const err = <E extends ErrorTypes>(error: E): Err<E> => ({ error })
 
 /**
  * Returns the `value` from a Result.
