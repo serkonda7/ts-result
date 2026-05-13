@@ -1,4 +1,10 @@
 # Changelog
+## 1.0.5
+_2026-05-13_
+
+- Archived the project
+
+
 ## 1.0.4
 _2026-04-11_
 

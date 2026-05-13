@@ -6,6 +6,11 @@
 Minimalistic Result type for TypeScript.
 
 
+## ⚠️ Archived
+This project is archived.
+I recommend using [better-result](https://github.com/dmmulroy/better-result) instead.
+
+
 ## 📦 Installation
 ```sh
 npm install @serkonda7/ts-result
